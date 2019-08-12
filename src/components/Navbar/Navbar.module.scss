@@ -1,0 +1,36 @@
+@import '../../assets/styles/colors';
+
+header {
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    display: inline;
+    margin: 0 0 0 40px;
+    text-align: center;
+    font-size: 1.4rem;
+    color: $normal-text;
+}
+
+.navLinks {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin: 0 40px 0 0;
+    padding: 0;
+}
+
+.navLinks li:nth-of-type(1) {
+    margin: 0 40px 0 0;
+    font-size: 1.5rem;
+    color: $normal-text;
+}

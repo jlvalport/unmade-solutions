@@ -1,0 +1,59 @@
+@import '../../../assets//styles/landing-spaces';
+@import '../../../assets/styles/colors';
+
+section {
+    height: 100vh;
+    padding: $mobil-landing-space;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.landingText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0 0;
+
+    p {
+        margin: 0;
+        display: inline-block;
+        color: $landing-text;
+    }
+
+    p:nth-of-type(1) {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+}
+
+.landTextSecondPart {
+    display: flex;
+    align-items: center;
+
+    p:nth-of-type(1) {
+        font-size: 6rem;
+        line-height: 2.2rem;
+    }
+
+    p:nth-of-type(2) {
+        font-size: 2rem;
+        line-height: 2.2rem;
+    }
+}
+
+.devBg {
+    position: absolute;
+    height: 90vh;
+    width: 90vw;
+    max-width: 375px;
+    bottom: -27%;
+    right: 0;
+}
+
+.dev {
+    position: absolute;
+    height: 275px;
+    width: 275px;
+    right: 10px;
+    bottom: 50px;
+}
