@@ -5,7 +5,8 @@
     position: relative;
     height: 100vh;
     width: 100%;
-    padding: $mobil-landing-space;
+    padding-top: $mobil-landing-space;
+    margin: 0 0 150px;
 }
 
 .landingText {
@@ -13,13 +14,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 23%;
+    top: 34%;
     transform: translateY(-50%);
 
     p {
         margin: 0;
         display: inline-block;
-        color: $landing-text;
+        color: $main-text;
     }
 
     p:nth-of-type(1) {

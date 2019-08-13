@@ -1,5 +1,5 @@
-$transparentorange: rbga(#FFC08A, .41);
-$transparentblue: rbga(#8ABFFF, .41);
+$transparentorange: rgba(255, 192, 138, .41);
+$transparentblue: rgba(138, 191, 255, .41);
 $gray: #E3E3E3;
 $red: #C10000;
 $orange: #FF5D24;
@@ -8,6 +8,7 @@ $darkblue: #054A91;
 $verydarkblue: #031D44;
 
 $normal-text: $verydarkblue;
-$landing-text: $darkblue;
+$main-text: $darkblue;
 
 $addon: $orange;
+$mainTitleBg: $transparentblue;

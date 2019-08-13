@@ -1,0 +1,26 @@
+@import '../../../../assets/styles/colors';
+
+.titleBox {
+    display: inline-block;
+    position: relative;
+    margin: 0 0 30px 0;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        width: 25px;
+        height: 3px;
+        bottom: 50%;
+        transform: translateY(50%);
+        background: $addon;
+        vertical-align: middle;
+    }
+}
+
+.title {
+    display: inline-block;
+    font-size: 2rem;
+    width: calc(100% - 46px);
+    margin: 0 20px 0 26px;
+}
