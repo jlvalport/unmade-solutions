@@ -1,0 +1,11 @@
+@import '../../../assets/styles/colors';
+
+.title {
+    font-size: 3rem;
+    margin: 0;
+
+    ::before {
+        content: '';
+        background: $addon;
+    }
+}

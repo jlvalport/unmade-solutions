@@ -6,9 +6,7 @@ import landingImg from '../../../assets/img/graphics/dev.svg';
 
 const LandingSection = () => {
     return (
-        <section>
-            <img src={landingImgBg} alt='Developer background' className={classes.devBg} />
-            <img src={landingImg} alt='Developer' className={classes.dev} />
+        <section className={classes.landingSection}>
             <div className={classes.landingText}>
                 <p>Creamos</p>
                 <div className={classes.landTextSecondPart}>
@@ -16,7 +14,10 @@ const LandingSection = () => {
                     <p>presencia<br /> en <b>Internet</b></p>
                 </div>
             </div>
-            
+            <div className={classes.devParent}>
+                <img src={landingImgBg} alt='Developer background' className={classes.devBg} />
+                <img src={landingImg} alt='Developer' className={classes.dev} />
+            </div>
         </section>
     );
 }

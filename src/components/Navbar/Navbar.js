@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classes from './Navbar.module.scss';
-import MenuBtn from '../../hoc/MenuBtn/MenuBtn';
+import MenuBtn from '../../hoc/UI/MenuBtn/MenuBtn';
 
 const Navbar = props => {
     return (
