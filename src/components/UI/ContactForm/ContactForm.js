@@ -1,152 +1,71 @@
 import React from 'react';
+import { withFormik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 
 import classes from './ContactForm.module.scss';
-import Input from './Input/Input';
 
-class ContactForm extends React.Component {
-    state = {
-        form: {
-            name: {
-                elementType: 'input',
-                label: 'Mi nombre es',
-                elementConfig: {
-                    type: 'text',
-                    placeholder: 'Tu nombre'
-                },
-                value: '',
-                validation: {
-                    required: true,
-                    touched: false,
-                    valid: false,
-                    minLength: 1
-                }
-            },
-            email: {
-                elementType: 'input',
-                label: 'Contáctame a',
-                elementConfig: {
-                    type: 'email',
-                    placeholder: 'tu@correo.com'
-                },
-                value: '',
-                validation: {
-                    required: true,
-                    touched: false,
-                    valid: false,
-                    minLength: 1
-                }
-            },
-            phone: {
-                elementType: 'input',
-                label: 'Mi número de teléfono es',
-                elementConfig: {
-                    type: 'text',
-                    placeholder: 'Tu número de teléfono'
-                },
-                value: '',
-                validation: {
-                    required: false,
-                    touched: false,
-                    valid: false
-                }
-            },
-            company: {
-                elementType: 'input',
-                label: 'Trabajo en',
-                elementConfig: {
-                    type: 'text',
-                    placeholder: 'Tu compañia'
-                },
-                value: '',
-                validation: {
-                    required: false,
-                    touched: false,
-                    valid: false
-                }
-            },
-            message: {
-                elementType: 'textarea',
-                label: 'Mensaje',
-                elementConfig: {
-                    type: 'text',
-                    placeholder: 'Empieza a escribir...'
-                },
-                value: '',
-                validation: {
-                    required: true,
-                    touched: false,
-                    valid: false,
-                    minLength: 1
-                }
-            }
-        }
-    }
+const CForm = ({
+    values,
+    errors,
+    touched,
+    isSubmitting
+}) => (
+        <Form className={classes.contactForm}>
+            <div className={classes.input}>
+                <label className={touched.name && errors.name ? [classes.label, classes.labelError].join(' ') : classes.label} >Mi nombre es
+                <ErrorMessage name='name' component='p' className={classes.error}/>
+                <Field type='text' name='name' placeholder='Tu nombre' autoComplete='name' className={classes.inputElement} />
+                </label>
+            </div>
+            <div className={classes.input}>
+                <label className={touched.email && errors.email ? [classes.label, classes.labelError].join(' ') : classes.label} >Contáctame a
+                <ErrorMessage name='email' component='p' className={classes.error}/>
+                <Field type='email' name='email' placeholder='tu@correo.com' autoComplete='email' className={classes.inputElement} />
+                </label>
+            </div>
+            <div className={classes.input}>
+                <label className={touched.phone && errors.phone ? [classes.label, classes.labelError].join(' ') : classes.label} >Mi número de teléfono es
+                <ErrorMessage name='phone' component='p' className={classes.error}/>
+                <Field type='phone' name='phone' placeholder='Tu número de teléfono' autoComplete='tel' className={classes.inputElement} />
+                </label>
+            </div>
+            <div className={classes.input}>
+                <label className={touched.company && errors.company ? [classes.label, classes.labelError].join(' ') : classes.label} >Trabajo en
+                <ErrorMessage name='company' component='p' className={classes.error}/>
+                <Field type='text' name='company' placeholder='Tu compañía' autoComplete='organization' className={classes.inputElement} />
+                </label>
+            </div>
+            <div className={classes.input}>
+                <label className={touched.message && errors.message ? [classes.label, classes.labelError].join(' ') : classes.label} >Mensaje
+                <ErrorMessage name='message' component='p' className={classes.error}/>
+                <Field component='textarea' name='message' placeholder='Empieza a escribir...' className={classes.textAreaElement} />
+                </label>
+            </div>
+            <button type='submit' className={classes.sendBtn} disabled={isSubmitting}>Enviar</button>
+        </Form>
+    );
 
-    inputChangedHandler = (event, inputIdentifier) => {
-        const updatedForm = {
-            ...this.state.form
-        };
-        const updatedFormElement = {
-            ...updatedForm[inputIdentifier]
-        };
-        const updatedFormElementValidation = {
-            ...updatedFormElement.validation
+const ContactForm = withFormik({
+    mapPropsToValues({ name, email, phone, company, message }) {
+        return {
+            name: name || '',
+            email: email || '',
+            phone: phone || '',
+            company: company || '',
+            message: message || ''
         }
-        updatedFormElement.value = event.target.value;
-        updatedFormElementValidation.valid = this.checkValidity(updatedFormElement.value, updatedFormElementValidation);
-        updatedFormElementValidation.touched = true;
-        updatedFormElement.validation = updatedFormElementValidation;
-        updatedForm[inputIdentifier] = updatedFormElement;
-        console.log(updatedFormElement);
+    },
+    validationSchema: Yup.object().shape({
+        name: Yup.string().required('El nombre es requerido'),
+        email: Yup.string().email('Email invalido').required('Email requerido'),
+        phone: Yup.number().typeError('Debe ser un número telefónico'),
+        company: Yup.string(),
+        message: Yup.string().required('Mensaje requerido')
+    }),
+    handleSubmit(values) {
+        console.log(values);
         
-        this.setState({form: updatedForm});
     }
-
-    sendInfoHandler = event => {
-        event.preventDefault();
-    }
-
-    checkValidity(value, rules) {
-        let isValid = true;
-        
-        if (rules.required) {
-            isValid = value.trim() !==  '' && isValid;
-        }
-        if (rules.minLength) {
-            isValid = value.length >= rules.minLength && isValid;
-        }
-
-        return isValid;
-    }
-
-    render() {
-        const formElementsArray = [];
-        for (let key in this.state.form) {
-            formElementsArray.push({
-                id: key,
-                config: this.state.form[key]
-            });
-        }
-
-        return (
-            <form onSubmit={this.sendInfoHandler} className={classes.contactForm}>
-                {formElementsArray.map(formElement => (
-                    <Input
-                        key={formElement.id}
-                        elementType={formElement.config.elementType}
-                        elementConfig={formElement.config.elementConfig}
-                        label={formElement.config.label}
-                        value={formElement.config.value}
-                        invalid={!formElement.config.validation.isValid}
-                        touched={formElement.config.validation.touched}
-                        changed={event => this.inputChangedHandler(event, formElement.id)}
-                    />
-                ))}
-                <button className={classes.sendBtn}>Enviar</button>
-            </form>
-        );
-    }
-
-}
+})(CForm)
 
 export default ContactForm
