@@ -2,7 +2,8 @@ import React from 'react';
 
 import LandingSection from './LandingSection/LandingSection';
 import ServicesSection from './ServicesSection/ServicesSection';
-import QuoteSection from '../../hoc/UI/QuoteSection/QuoteSection';
+import QuoteSection from '../UI/QuoteSection/QuoteSection';
+import ContactSection from './ContactSection/ContactSection';
 
 const LandingPage = () => {
     return (
@@ -10,6 +11,7 @@ const LandingPage = () => {
             <LandingSection />
             <ServicesSection />
             <QuoteSection>Hacemos <br />Arte <span>&amp;</span> <br />Ciencia</QuoteSection>
+            <ContactSection />
         </React.Fragment>
     );
 }

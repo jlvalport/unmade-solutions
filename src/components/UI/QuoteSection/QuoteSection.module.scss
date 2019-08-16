@@ -3,7 +3,7 @@
 .outerBox {
     width: 100%;
     height: auto;
-    margin: 150px 0 150px;
+    margin: 150px 0 0;
     background: $normalText;
     position: relative;
     display: flex;
@@ -14,13 +14,13 @@
     .triangleVector:nth-of-type(1) {
         position: absolute;
         width: 100%;
-        bottom: calc(100% - 2px);
+        bottom: calc(100% - 3px);
     }
 
     .triangleVector:nth-of-type(2) {
         position: absolute;
         width: 100%;
-        top: calc(100% - 2px);
+        top: calc(100% - 3px);
         transform: rotateX(-180deg) rotateY(-180deg);
     }
 }

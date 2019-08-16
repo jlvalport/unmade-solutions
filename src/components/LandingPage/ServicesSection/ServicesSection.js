@@ -1,9 +1,9 @@
 import React from 'react';
 
 import classes from './ServicesSection.module.scss';
-import SectionTitle from '../../../hoc/UI/SectionTitle/SectionTitle';
-import InfoPiece from '../../../hoc/UI/InfoPiece/InfoPiece';
-import MoreInfoBtn from '../../../hoc/UI/MoreInfoBtn/MoreInfoBtn';
+import SectionTitle from '../../UI/SectionTitle/SectionTitle';
+import InfoPiece from '../../UI/InfoPiece/InfoPiece';
+import MoreInfoBtn from '../../UI/MoreInfoBtn/MoreInfoBtn';
 
 const ServicesSection = () => {
     return (

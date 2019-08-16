@@ -1,0 +1,16 @@
+@import '../../../assets/styles/colors';
+
+.contactForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sendBtn {
+    font-size: 1.7rem;
+    color: #fff;
+    padding: 14px 25px;
+    background: $addon;
+    border-radius: 30px;
+}

@@ -1,3 +1,5 @@
+@import '../../../assets/styles/colors';
+
 .infoPieceBox {
     margin: 30px 0 70px 0;
     display: flex;
@@ -6,5 +8,6 @@
     p {
         font-size: 1.4rem;
         margin: 0 25px 1em;
+        color: $normalText;
     }
 }
