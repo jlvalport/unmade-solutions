@@ -1,0 +1,50 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+
+.newsletterForm {
+    width: 100%;
+    display: flex;
+
+}
+
+.inputBox {
+    display: inline-block;
+    width: 75%;
+    margin: 0;
+
+    p.error {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: rgb(255, 59, 59);
+        margin: 8px 0 0;
+    }
+}
+
+.inputElement {
+    font-size: 1.2rem;
+    background: #2C2B2B;
+    color: #fff;
+    font-family: $bodyFont;
+    border: none;
+    padding: 7px;
+    border-radius: 10px;
+
+    &::placeholder {
+        color: #fff;
+    }
+
+    &.inputError {
+        border: 2px solid $errorColor;
+    }
+}
+
+.sendBtn {
+    background: #5F5F5F;
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 7px 15px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    align-self: flex-start;
+}

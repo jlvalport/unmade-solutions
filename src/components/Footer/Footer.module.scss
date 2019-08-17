@@ -1,0 +1,82 @@
+@import '../../assets/styles/fonts';
+
+.footer {
+    background: #3E3E3E;
+    color: #fff;
+}
+
+.footerHead {
+    padding: 17px 0;
+    margin: 0 0 50px;
+    background: #272626;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.16);
+}
+
+.footerBody {
+    padding: 0 25px;
+}
+
+.footerLogo {
+    text-align: center;
+    font-size: 1.7rem;
+    font-family: $titleFont;
+    margin: 0.3em 0 0.3em;
+}
+
+.footerContactBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footerContact {
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.newsletterBox {
+    margin: 0 0 50px;
+}
+
+.linksOutterBox {
+    display: flex;
+    width: 100%;
+    margin: 0 0 50px;
+}
+
+.linksInnerBox {
+    width: 50%;
+    margin: 0 10px;
+
+    .pageLinksTitle {
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+
+    &.flexEnd {
+        align-self: flex-end;
+    }
+
+    &.spaceAround {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+.socialLinks {
+    font-size: 3.4rem;
+}
+
+.copyrightBox {
+
+    .hr {
+        margin: 0 0 15px;
+        border: 1px solid #5F5F5F;
+    }
+
+    p {
+        text-align: center;
+        margin: 0;
+        padding: 0 0 0.8em 0;
+    }
+}

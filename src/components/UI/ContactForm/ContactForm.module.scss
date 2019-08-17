@@ -1,4 +1,5 @@
 @import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
 
 .contactForm {
     width: 100%;
@@ -7,7 +8,7 @@
     align-items: center;
 }
 
-.input {
+.inputBox {
     display: block;
     width: 100%;
     margin: 0 0 20px;
@@ -39,6 +40,7 @@ p.error {
     display: block;
     width: 100%;
     font-size: 1.7rem;
+    font-family: $bodyFont;
     color: $addon;
     outline: none;
     background: none;
@@ -47,6 +49,17 @@ p.error {
     &::placeholder {
         color: #fff;
     }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  border: none;
+  background: unset;
+  -webkit-text-fill-color: $addon;
+  -webkit-box-shadow: 0 0 0 100px #E3E3E3 inset !important;
+  box-shadow: 0 0 0 100px #E3E3E3 inset !important;
 }
 
 .textAreaElement {
@@ -64,9 +77,21 @@ p.error {
     }
 }
 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover, 
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  border: none;
+  background: unset;
+  -webkit-text-fill-color: $addon;
+  -webkit-box-shadow: 0 0 0 1000px #E3E3E3 inset !important;
+  box-shadow: 0 0 0 1000px #E3E3E3 inset !important;
+}
+
 .sendBtn {
     font-size: 1.7rem;
     color: #fff;
+    font-family: $bodyFont;
     padding: 14px 25px;
     background: $addon;
     border-radius: 30px;

@@ -5,7 +5,7 @@ import MenuBtn from '../UI/MenuBtn/MenuBtn';
 
 const Navbar = props => {
     return (
-        <header>
+        <header className={classes.header}>
             <p className={classes.logo}><b>Unmade</b><br />Solutions</p>
             <ul className={classes.navLinks}>
                 <li>EN</li>

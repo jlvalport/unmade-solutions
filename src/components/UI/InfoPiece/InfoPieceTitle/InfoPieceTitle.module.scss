@@ -1,4 +1,5 @@
 @import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/fonts';
 
 .titleBox {
     display: inline-block;
@@ -21,6 +22,7 @@
 .title {
     display: inline-block;
     font-size: 2rem;
+    font-family: $titleFont;
     width: calc(100% - 46px);
     margin: 0 20px 0 26px;
     color: $normalText;

@@ -1,14 +1,17 @@
 @import '../../assets/styles/colors';
+@import '../../assets/styles/fonts';
 
-header {
+.header {
     position: fixed;
     height: 100px;
     width: 100%;
     background: #fff;
+    font-family: $titleFont;
     display: flex;
     flex-direction: row;
     align-items: center;
     z-index: 100;
+
 }
 
 .logo {
@@ -16,6 +19,7 @@ header {
     margin: 0 0 0 40px;
     text-align: center;
     font-size: 1.4rem;
+    line-height: 1.8rem;
     color: $normalText;
 }
 
