@@ -1,0 +1,8 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+
+.subTitle {
+    font-size: $secondTitle;
+    margin: 1.2em 25px 1.2em;
+    color: $normalText;
+}
