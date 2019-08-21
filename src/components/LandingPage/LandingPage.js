@@ -10,7 +10,7 @@ const LandingPage = () => {
         <main>
             <LandingSection />
             <ServicesSection />
-            <QuoteSection>Hacemos <br />Arte <span>&amp;</span> <br />Ciencia</QuoteSection>
+            <QuoteSection fontSize='3.6'>Hacemos <br /><b>Arte</b> <span>&amp;</span> <br /><b>Ciencia</b></QuoteSection>
             <ContactSection />
         </main>
     );

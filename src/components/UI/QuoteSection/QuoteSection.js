@@ -9,7 +9,7 @@ const QuoteSection = props => {
             <img src={triangleVector} alt='' className={classes.triangleVector} />
             <img src={triangleVector} alt='' className={classes.triangleVector} />
             <div className={classes.innerBox}>
-                <p>{props.children}</p>
+                <p style={{fontSize: props.fontSize + 'rem'}}>{props.children}</p>
             </div>
         </section>
     );

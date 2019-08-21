@@ -8,8 +8,18 @@ class SectionTitle extends React.Component {
     }
 
     componentDidMount() {
-        const titleWidth = document.querySelector('.' + classes.title).offsetWidth;
-        const titleHeight = document.querySelector('.' + classes.title).offsetHeight;
+        const title = document.querySelector('.' + classes.title);
+        const titleBox = document.querySelector('.' + classes.titleBox);
+        let titleWidth = title.offsetWidth;
+        const titleHeight = title.offsetHeight;
+        const maxWidth = (window.innerWidth > 0) ? window.innerWidth : window.screen.width;
+        const titleBoxStyle = titleBox.currentStyle || window.getComputedStyle(titleBox);
+        const marginLeftOfTitle = parseInt(titleBoxStyle.marginLeft, 10)
+        
+        if (titleWidth >= (maxWidth - marginLeftOfTitle)) {
+            titleWidth -= 40;
+        }
+        
         this.setState({
             titleBgStyles: {
                 width: titleWidth + 'px',
@@ -28,7 +38,7 @@ class SectionTitle extends React.Component {
         return (
             <div className={classes.titleBox}>
                 <div className={classes.titleBg} style={this.state.titleBgStyles}></div>
-                <SpecificComponent className={classes.title}> {this.props.children}</SpecificComponent>
+                <SpecificComponent className={classes.title}>{this.props.children}</SpecificComponent>
             </div>
         );
     }
