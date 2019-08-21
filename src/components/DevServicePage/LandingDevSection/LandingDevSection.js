@@ -5,7 +5,7 @@ import ScrollDownArrow from '../../UI/ScrollDownArrow/ScrollDownArrow';
 
 const LandingDevSection = () => {
     return(
-        <section className={classes.landingDevSection}>
+        <section className={classes.section}>
             <div className={classes.landingTextBox}>
                 <p className={classes.landTextStart}>Nos enfocamos en que</p>
                 <div className={classes.emTextBox}>
