@@ -7,12 +7,12 @@ import ContactSection from './ContactSection/ContactSection';
 
 const LandingPage = () => {
     return (
-        <React.Fragment>
+        <main>
             <LandingSection />
             <ServicesSection />
             <QuoteSection>Hacemos <br />Arte <span>&amp;</span> <br />Ciencia</QuoteSection>
             <ContactSection />
-        </React.Fragment>
+        </main>
     );
 }
 
