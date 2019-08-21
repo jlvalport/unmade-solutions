@@ -6,7 +6,7 @@ import InfoPiece from '../../UI/InfoPiece/InfoPiece';
 
 const DevServiceDescription = () => {
     return (
-        <React.Fragment>
+        <section>
             <SectionTitle tag='h2'>Desarrollo Web</SectionTitle>
             <p className={classes.serviceIntro}>Usamos los mejores procesos y tecnologías para crear tu sitio:</p>
             <InfoPiece title='Interfaz Gráfica Intuitiva'>
@@ -39,7 +39,7 @@ const DevServiceDescription = () => {
                 <p>Dejarás de tratar la falta de conectividad como un error. Tu sitio web debe ser capaz de manejar las desconexiones y continuar con el negocio de la manera más ingeniosa posible.</p>
                 <p>La calidad en un servicio o producto no es lo que pones en él. Es lo que el cliente obtiene de ello.</p>
             </InfoPiece>
-        </React.Fragment>
+        </section>
     );
 }
 

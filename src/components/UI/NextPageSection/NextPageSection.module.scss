@@ -1,0 +1,20 @@
+@import '../../../assets/styles/colors';
+
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    P {
+        font-size: 2.3rem;
+        margin: 0 17% 0;
+        color: $normalText;
+    }
+
+    .icon {
+        font-size: 1.7rem;
+        color: rgba($normalText, 0.15);
+    }
+}
