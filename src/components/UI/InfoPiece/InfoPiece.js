@@ -6,7 +6,7 @@ import InfoPieceTitle from './InfoPieceTitle/InfoPieceTitle';
 const InfoPiece = props => {
     return (
         <div className={classes.infoPieceBox}>
-            <InfoPieceTitle>{props.title}</InfoPieceTitle>
+            <InfoPieceTitle tag={props.tag} >{props.title}</InfoPieceTitle>
             {props.children}
         </div>
     );

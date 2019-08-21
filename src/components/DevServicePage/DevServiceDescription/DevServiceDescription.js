@@ -1,14 +1,12 @@
 import React from 'react';
 
 import classes from './DevServiceDescription.module.scss';
-import SectionTitle from '../../UI/SectionTitle/SectionTitle';
 import InfoPiece from '../../UI/InfoPiece/InfoPiece';
 
 const DevServiceDescription = () => {
     return (
         <section>
-            <SectionTitle tag='h2'>Desarrollo Web</SectionTitle>
-            <p className={classes.serviceIntro}>Usamos los mejores procesos y tecnologías para crear tu sitio:</p>
+            <h2 className={classes.serviceIntro}>Usamos los mejores procesos y tecnologías para crear tu sitio:</h2>
             <InfoPiece title='Interfaz Gráfica Intuitiva'>
                 <p>Diseñamos interfaces gráficas que los usuarios no tengan que aprender a usar, así podrán encontrar lo que buscan rápidamente. Esto crea mayor satisfacción hacia tu marca promoviendo así la conversión de clientes compradores.</p>
             </InfoPiece>

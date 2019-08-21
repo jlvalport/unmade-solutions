@@ -33,7 +33,7 @@ class SectionTitle extends React.Component {
             h1: 'h1',
             h2: 'h2'
         }
-        const SpecificComponent = component[this.props.tag];
+        const SpecificComponent = this.props.tag ? component[this.props.tag] : 'h1';
 
         return (
             <div className={classes.titleBox}>

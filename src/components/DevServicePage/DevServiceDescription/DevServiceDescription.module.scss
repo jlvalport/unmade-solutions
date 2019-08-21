@@ -1,4 +1,9 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+
 .serviceIntro {
-    font-size: 2rem;
+    font-size: $secondTitle;
     margin: 1em 11% 80px;
+    font-weight: 400;
+    color: $normalText;
 }
