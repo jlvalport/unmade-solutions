@@ -1,6 +1,5 @@
 import React from 'react';
 
-import classes from './MarketingServiceDescription.module.scss';
 import InfoPiece from '../../UI/InfoPiece/InfoPiece';
 import SubSectionTitle from  '../../UI/SubSectionTitle/SubSectionTitle';
 

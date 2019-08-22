@@ -1,6 +1,5 @@
 import React from 'react';
 
-import classes from './DevServicePage.module.scss';
 import LandingDevSection from './LandingDevSection/LandingDevSection';
 import SectionTitle from '../UI/SectionTitle/SectionTitle';
 import DevServiceDescription from './DevServiceDescription/DevServiceDescription';

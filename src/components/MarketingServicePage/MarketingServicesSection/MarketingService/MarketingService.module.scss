@@ -1,0 +1,32 @@
+@import '../../../../assets/styles/colors';
+
+.serviceBox {
+    width: 100%;
+    display: block;
+    margin: 15px 0 0;
+}
+
+.iconBox {
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 60px;
+        width: 60px;
+        color: $addon;
+    }
+}
+
+.titleBox {
+    background: $normalText;
+    padding: 5px 16%;
+
+    p {
+        color: #fff;
+        margin: 0.4em 0;
+        font-size: 1.7rem;
+    }
+}
