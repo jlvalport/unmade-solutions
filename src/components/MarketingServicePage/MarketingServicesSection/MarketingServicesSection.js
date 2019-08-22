@@ -1,6 +1,5 @@
 import React from 'react';
 
-import classes from './MarketingServicesSection.module.scss';
 import SubSectionTitle from '../../UI/SubSectionTitle/SubSectionTitle';
 import MarketingService from  './MarketingService/MarketingService';
 import socialMediaManagementIcon from '../../../assets/img/graphics/icons/team.svg'
