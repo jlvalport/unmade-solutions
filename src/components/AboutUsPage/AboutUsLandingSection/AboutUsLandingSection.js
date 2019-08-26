@@ -7,7 +7,7 @@ const AboutUsLandingSection = () => {
     return (
         <section className={classes.section}>
             <div className={classes.landingTextBox}>
-                <p className={classes.landTextStart}>Hacemos <br />lo <br />que <br />no <br />está <br />hecho</p>
+                <h1 className={classes.landTextStart}>Hacemos <br />lo <br />que <br />no <br />está <br />hecho</h1>
             </div>
             <ScrollDownArrow color='orange' />
         </section>

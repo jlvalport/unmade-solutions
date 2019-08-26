@@ -1,0 +1,22 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+
+.section {
+    width: 100%;
+
+    p {
+        font-size: $paragraphLvlText;
+        margin: 1em 25px;
+    }
+}
+
+.introText {
+    font-size: 3.5rem;
+    margin: 1.5em 25px;
+}
+
+.photo {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
