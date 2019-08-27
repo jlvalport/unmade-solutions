@@ -6,9 +6,9 @@ const MenuBtn = () => {
     return (
         <div className={classes.box}>
             <div className={`${classes.btn} ${classes['not-active']}`}>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span className={classes.span}></span>
+                <span className={classes.span}></span>
+                <span className={classes.span}></span>
             </div>
         </div>
     );

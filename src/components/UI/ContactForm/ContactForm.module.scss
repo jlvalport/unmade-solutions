@@ -49,6 +49,11 @@ p.error {
     &::placeholder {
         color: #fff;
     }
+
+}
+
+.white::placeholder {
+    color: rgb(201, 199, 199);
 }
 
 input:-webkit-autofill,
@@ -60,6 +65,17 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: $addon;
   -webkit-box-shadow: 0 0 0 100px #E3E3E3 inset !important;
   box-shadow: 0 0 0 100px #E3E3E3 inset !important;
+}
+
+input.white:-webkit-autofill,
+input.white:-webkit-autofill:hover, 
+input.white:-webkit-autofill:focus,
+input.white:-webkit-autofill:active {
+  border: none;
+  background: unset;
+  -webkit-text-fill-color: $addon;
+  -webkit-box-shadow: 0 0 0 100px #fff inset !important;
+  box-shadow: 0 0 0 100px #fff inset !important;
 }
 
 .textAreaElement {
@@ -75,6 +91,10 @@ input:-webkit-autofill:active {
     &::placeholder {
         color: #fff;
     }
+
+    &.white::placeholder {
+        color: rgb(201, 199, 199);
+    }
 }
 
 textarea:-webkit-autofill,
@@ -86,6 +106,17 @@ textarea:-webkit-autofill:active {
   -webkit-text-fill-color: $addon;
   -webkit-box-shadow: 0 0 0 1000px #E3E3E3 inset !important;
   box-shadow: 0 0 0 1000px #E3E3E3 inset !important;
+}
+
+textarea.white:-webkit-autofill,
+textarea.white:-webkit-autofill:hover, 
+textarea.white:-webkit-autofill:focus,
+textarea.white:-webkit-autofill:active {
+  border: none;
+  background: unset;
+  -webkit-text-fill-color: $addon;
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+  box-shadow: 0 0 0 1000px #fff inset !important;
 }
 
 .sendBtn {

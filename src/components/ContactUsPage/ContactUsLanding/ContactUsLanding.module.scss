@@ -1,0 +1,51 @@
+@import '../../../assets//styles/landing-spaces';
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+
+.section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    font-family: $titleFont;
+    padding-top: $mobil-landing-space;
+    margin: 0 0 80px;
+    
+    p {
+        color: $normalText;
+    }
+}
+
+.textBox {
+    position: relative;
+    top: 43%;
+    transform: translateY(-50%);
+}
+
+.hello {
+    font-size: 7rem;
+    margin: 0 25px;
+    font-weight: 700;
+}
+
+.helpYou {
+    font-size: 2.2rem;
+    margin: 0 25px 25px;
+}
+
+.contact {
+    font-size: 1.3rem;
+    margin: 0 25px;
+}
+
+.orange {
+    color: $addon;
+}
+
+.o {
+    font-size: 6rem;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%)
+}
