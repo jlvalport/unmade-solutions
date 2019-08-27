@@ -13,7 +13,7 @@ const AboutUsInfoSection = () => {
             <ParagraphSeparator>
                 <p>Trabajamos juntos para diseñar, crear y producir trabajo del que estamos orgullosos para las personas y organizaciones en las que creemos. Combinamos creatividad y tecnología para generar una motivación significativa y un compromiso profundo con la calidad de nuestro trabajo y la experiencia de nuestros clientes.</p>
             </ParagraphSeparator>
-            <SectionTitle fontSize='2.4rem' color='orange'>Con sede en nuestro bello El Salvador</SectionTitle>
+            <SectionTitle tag='h2' fontSize='2.4rem' color='orange'>Con sede en nuestro bello El Salvador</SectionTitle>
             <img src={sanSalvadorCityImg} className={classes.photo} alt='Ciudad de San Salvador y su volcán' />
             <img src={sanSalvadorCenterImg} className={classes.photo} alt='El centro de la ciudad de San Salvador' />
             <ParagraphSeparator>
