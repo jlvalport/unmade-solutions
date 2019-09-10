@@ -8,7 +8,7 @@ const Navbar = props => {
         <header className={classes.header}>
             <p className={classes.logo}><b>Unmade</b><br />Solutions</p>
             <ul className={classes.navLinks}>
-                <li>EN</li>
+                <li><p>EN</p></li>
                 <li><MenuBtn /></li>
             </ul>
         </header>

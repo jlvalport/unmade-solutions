@@ -4,13 +4,11 @@ import classes from './MenuBtn.module.scss';
 
 const MenuBtn = () => {
     return (
-        <div className={classes.box}>
-            <div className={`${classes.btn} ${classes['not-active']}`}>
-                <span className={classes.span}></span>
-                <span className={classes.span}></span>
-                <span className={classes.span}></span>
-            </div>
-        </div>
+        <button className={[classes['hamburger'], classes['hamburger--slider']].join(' ')} type='button'>
+            <span className={classes['hamburger-box']}>
+                <span className={classes['hamburger-inner']}></span>
+            </span>
+        </button>
     );
 }
 
