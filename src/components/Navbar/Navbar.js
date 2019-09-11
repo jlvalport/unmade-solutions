@@ -9,7 +9,7 @@ const Navbar = props => {
             <p className={classes.logo}><b>Unmade</b><br />Solutions</p>
             <ul className={classes.navLinks}>
                 <li><p>EN</p></li>
-                <li><MenuBtn /></li>
+                <li><MenuBtn menuClicked={props.menuClicked} isMenuShowing={props.isMenuShowing} /></li>
             </ul>
         </header>
     );

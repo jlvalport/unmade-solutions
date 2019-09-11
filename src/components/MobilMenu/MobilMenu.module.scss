@@ -1,0 +1,106 @@
+@import '../../assets/styles/colors';
+
+.mobilMenu {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 20;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+
+    &.is-active {
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.1s ease-in-out;
+    }
+
+    &.is-active .linksBox,
+    &.is-active .socialBox {
+        transform: translateY(0);
+        transition: all 0.4s ease-in-out;
+    }
+}
+
+.buttonBox {
+    position: absolute;
+    top: 21px;
+    right: 13.5%;
+    transform: translateX(50%);
+    z-index: 30;
+}
+
+.linksBox {
+    width: 75%;
+    background: $normalText;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: translateY(100%);
+    transition: all 0.4s ease-in-out;
+}
+
+.socialBox {
+    width: 25%;
+    background: #fff;
+    transform: translateY(-100%);
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logo {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 1em 0;
+    line-height: 2rem;
+    align-self: center;
+    
+    a {
+        display: inline-block;
+        padding: 10px 15px;
+    }
+}
+
+.link {
+    display: block;
+    width: 100%;
+    margin: 0 0 40px;
+    font-size: 1.6rem;
+
+    a {
+        display: block;
+        padding: 10px 0 10px 25px;
+    }
+}
+
+.contactInfo {
+    font-size: 1.1rem;
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    p {
+        margin: 0 25px 1.3em 0;
+        text-align: right;
+    }
+}
+
+.socialIcons {
+    font-size: 3rem;
+    color: $normalText;
+    margin: 0 0 15px;
+}
