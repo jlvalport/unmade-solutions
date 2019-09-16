@@ -15,12 +15,16 @@
 }
 
 .logo {
-    display: inline-block;
     margin: 0 0 0 40px;
-    text-align: center;
-    font-size: 1.4rem;
-    line-height: 1.8rem;
-    color: $normalText;
+    
+    p {
+        display: inline-block;
+        margin: 0;
+        text-align: center;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        color: $normalText;
+    }
 }
 
 .navLinks {

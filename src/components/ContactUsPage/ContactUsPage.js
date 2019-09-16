@@ -8,7 +8,7 @@ const ContactUsPage = () => {
     return (
         <main>
             <ContactUsLanding />
-            <p className={classes.p}>Puedes usar este formulario:</p>
+            <p className={classes.p}>puedes usar este formulario:</p>
             <div className={classes.contactFormBox}>
                 <ContactForm bgColor='white' />
             </div>

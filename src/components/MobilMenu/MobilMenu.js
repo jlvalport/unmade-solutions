@@ -19,27 +19,27 @@ const MobilMenu = props => {
             </div>
             <ul className={classes.linksBox}>
                 <li className={classes.logo} >
-                    <Link to='/' >
+                    <Link to='/' onClick={props.menuClicked}>
                         <b>Unmade</b><br />Solutions
                     </Link>
                 </li>
                 <li className={classes.link} >
-                    <NavLink to='/servicio-de-desarrollo-web' >
+                    <NavLink to='/servicio-de-desarrollo-web' onClick={props.menuClicked}>
                         Desarrollo Web
                     </NavLink>
                 </li>
                 <li className={classes.link} >
-                    <NavLink to='/servicio-de-marketing' >
+                    <NavLink to='/servicio-de-marketing' onClick={props.menuClicked}>
                         Marketing Digital
                     </NavLink>
                 </li>
                 <li className={classes.link} >
-                    <NavLink to='/acerca-de-nosotros' >
+                    <NavLink to='/acerca-de-nosotros' onClick={props.menuClicked}>
                         Nosotros
                     </NavLink>
                 </li>
                 <li className={classes.link} >
-                    <NavLink to='/contacto' >
+                    <NavLink to='/contacto' onClick={props.menuClicked}>
                         Contacto
                     </NavLink>
                 </li>

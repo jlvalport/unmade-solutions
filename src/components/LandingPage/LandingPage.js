@@ -8,13 +8,13 @@ import NextPageSection from '../UI/NextPageSection/NextPageSection';
 
 const LandingPage = () => {
     return (
-        <main>
+        <React.Fragment>
             <LandingSection />
             <ServicesSection />
             <QuoteSection fontSize='3.6'>Hacemos <br /><b>Arte</b> <span>&amp;</span> <br /><b>Ciencia</b></QuoteSection>
             <ContactSection />
-            <NextPageSection>Desarrollo web</NextPageSection>
-        </main>
+            <NextPageSection link='/servicio-de-desarrollo-web' >Desarrollo web</NextPageSection>
+        </React.Fragment>
     );
 }
 

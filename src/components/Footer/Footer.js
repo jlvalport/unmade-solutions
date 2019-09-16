@@ -1,5 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 import classes from './Footer.module.scss';
 import Newsletter from './Newsletter/Newsletter';
@@ -11,7 +12,9 @@ const Footer = () => {
     return (
         <footer className={classes.footer}>
             <div className={classes.footerHead}>
-                <p className={classes.footerLogo}><b>Unmade</b> Solutions</p>
+                <Link to='/' className={classes.footerLogo} >
+                    <p><b>Unmade</b> Solutions</p>
+                </Link>
                 <div className={classes.footerContactBox}>
                     <p className={classes.footerContact}>C 7681-3313</p>
                     <p className={classes.footerContact}>hola@unmade.solutions</p>
@@ -25,26 +28,34 @@ const Footer = () => {
                 <div className={classes.linksOutterBox}>
                     <div className={classes.linksInnerBox}>
                         <p className={classes.pageLinksTitle}>Servicios</p>
-                        <p>Desarrollo de páginas web</p>
-                        <p>Marketing digital</p>
+                        <Link to='/servicio-de-desarrollo-web' >
+                            <p>Desarrollo de páginas web</p>
+                        </Link>
+                        <Link to='/servicio-de-marketing' >
+                            <p>Marketing digital</p>
+                        </Link>
                     </div>
                     <div className={[classes.linksInnerBox, classes.flexEnd].join(' ')}>
-                        <p>Acerca de nosotros</p>
-                        <p>Contáctanos</p>
+                        <Link to='/acerca-de-nosotros' >
+                            <p>Acerca de nosotros</p>
+                        </Link>
+                        <Link to='/contacto' >
+                            <p>Contáctanos</p>
+                        </Link>
                     </div>
                 </div>
-                <div className={classes.linksOutterBox} style={{margin: 0}}>
+                <div className={classes.linksOutterBox} style={{ margin: 0 }}>
                     <div className={classes.linksInnerBox}>
                         <p>Política de privacidad</p>
                         <p>Términos de uso</p>
                     </div>
                     <div className={[classes.linksInnerBox, classes.flexEnd, classes.spaceAround].join(' ')}>
-                        <FontAwesomeIcon icon={['fab', 'facebook-f']} className={classes.socialLinks}/>
-                        <FontAwesomeIcon icon={['fab', 'twitter']} className={classes.socialLinks}/>
+                        <FontAwesomeIcon icon={['fab', 'facebook-f']} className={classes.socialLinks} />
+                        <FontAwesomeIcon icon={['fab', 'twitter']} className={classes.socialLinks} />
                     </div>
                 </div>
                 <div className={classes.copyrightBox}>
-                    <hr className={classes.hr}/>
+                    <hr className={classes.hr} />
                     <p>Unmade Solutions © {currentYear}</p>
                     <p>Orgullosamente Salvadoreños</p>
                 </div>

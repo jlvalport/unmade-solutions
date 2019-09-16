@@ -17,10 +17,15 @@
 }
 
 .footerLogo {
-    text-align: center;
-    font-size: 1.7rem;
-    font-family: $titleFont;
     margin: 0.3em 0 0.3em;
+    display: block;
+
+    p {
+        text-align: center;
+        font-size: 1.7rem;
+        font-family: $titleFont;
+        margin: 0;
+    }
 }
 
 .footerContactBox {
@@ -60,6 +65,15 @@
     &.spaceAround {
         display: flex;
         justify-content: space-around;
+    }
+
+    a {
+        display: inline-block;
+        padding: 1em 10px 1em 0;
+
+        p {
+            margin: 0;
+        }
     }
 }
 

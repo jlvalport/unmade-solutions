@@ -1,6 +1,7 @@
 import React from 'react';
 
 import classes from './Layout.module.scss';
+import MenuBtnClasses from '../../components/UI/MenuBtn/MenuBtn.module.scss';
 import Navbar from '../../components/Navbar/Navbar';
 import MobilMenu from '../../components/MobilMenu/MobilMenu';
 import Footer from '../../components/Footer/Footer';
@@ -10,13 +11,11 @@ class Layout extends React.Component {
         isMenuShowing: false
     }
 
-    showMenuHandler = () => {
+    showMenuHandler = event => {
         this.setState({
             ...this.state,
             isMenuShowing: !this.state.isMenuShowing
         })
-        console.log('[showMenuHandler]');
-
     }
 
     render() {

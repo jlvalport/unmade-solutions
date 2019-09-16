@@ -12,7 +12,7 @@ const AboutUsPage = () => {
             <AboutUsLandingSection />
             <AboutUsInfoSection />
             <OurValuesSection />
-            <NextPageSection bgColor='#fff'>Contáctanos</NextPageSection>
+            <NextPageSection bgColor='#fff' link='/contacto' >Contáctanos</NextPageSection>
         </main>
     );
 };
