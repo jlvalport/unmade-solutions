@@ -58,8 +58,10 @@
         font-weight: 700;
     }
 
-    &.flexEnd {
-        align-self: flex-end;
+    .titleSpace {
+        height: 25px;
+        visibility: hidden;
+        margin: 1.3em 0;
     }
 
     &.spaceAround {

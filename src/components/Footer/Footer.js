@@ -35,7 +35,8 @@ const Footer = () => {
                             <p>Marketing digital</p>
                         </Link>
                     </div>
-                    <div className={[classes.linksInnerBox, classes.flexEnd].join(' ')}>
+                    <div className={classes.linksInnerBox}>
+                        <p className={classes.titleSpace} ></p>
                         <Link to='/acerca-de-nosotros' >
                             <p>Acerca de nosotros</p>
                         </Link>
