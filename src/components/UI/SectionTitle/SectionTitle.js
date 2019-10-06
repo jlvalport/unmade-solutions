@@ -47,8 +47,6 @@ class SectionTitle extends React.Component {
                     titleBgStyles
                 })
             }
-            console.log(titleHeight);
-
         }, 300)
     }
 

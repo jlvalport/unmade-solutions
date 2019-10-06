@@ -48,3 +48,56 @@
         margin: 0;
     }
 }
+
+@media screen and (min-width: 700px) {
+
+    .header {
+        padding: 0 50px;
+    }
+
+    .navLinks {
+        display: none;
+    }
+
+    .navLinksDesktop {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        color: $normalText;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        flex-grow: 1;
+        justify-content: space-between;
+    }
+
+    .navLinksDesktopInner {
+        list-style: none;
+        display: flex;
+        height: 50%;
+
+        li {
+            margin: 0 30px 0 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            a {
+                display: block;
+                color: $normalText;
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                &:visited {
+                    color: $normalText;
+                }
+
+            }
+        }
+
+        .socialIconsDesktop {
+            font-size: 1.4rem;
+        }
+    }
+}

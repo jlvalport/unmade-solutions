@@ -1,6 +1,5 @@
 import React from 'react';
 
-import classes from './Layout.module.scss';
 import MenuBtnClasses from '../../components/UI/MenuBtn/MenuBtn.module.scss';
 import Navbar from '../../components/Navbar/Navbar';
 import MobilMenu from '../../components/MobilMenu/MobilMenu';

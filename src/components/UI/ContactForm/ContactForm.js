@@ -6,7 +6,6 @@ import classes from './ContactForm.module.scss';
 
 const CForm = props => {
     const {
-        values,
         errors,
         touched,
         isSubmitting,

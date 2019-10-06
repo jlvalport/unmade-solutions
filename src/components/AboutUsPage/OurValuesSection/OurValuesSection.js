@@ -1,6 +1,5 @@
 import React from 'react';
 
-import classes from './OurValuesSection.module.scss';
 import SectionTitle from '../../UI/SectionTitle/SectionTitle';
 import Value from './Value/Value';
 import leadershipIcon from '../../../assets/img/graphics/icons/leadership.svg';
