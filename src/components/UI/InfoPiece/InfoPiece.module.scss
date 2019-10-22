@@ -1,6 +1,8 @@
 @import '../../../assets/styles/colors';
 @import '../../../assets/styles/fonts';
+@import '../../../assets//styles/media-queires';
 
+// Div container of infoPiece
 .infoPieceBox {
     margin: 30px 0 70px 0;
     display: flex;
@@ -10,5 +12,14 @@
         font-size: $paragraphLvlText;
         margin: 0 25px 1em;
         color: $normalText;
+    }
+}
+
+@media screen and (min-width: $desktopScreenSize) {
+
+    // Div container of infoPiece
+    .infoPieceBox {
+        margin: 30px 50px 70px 50px;
+        width: calc(50% - 100px);
     }
 }

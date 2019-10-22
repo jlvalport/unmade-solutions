@@ -1,3 +1,15 @@
+@import '../../../assets/styles/media-queires';
+
 .servicesSection {
     margin: 0 0 100px;
+}
+
+/* Desktop view media query */
+
+@media screen and (min-width: $desktopScreenSize) {
+
+    .allInfoBox {
+        display: flex;
+        
+    }
 }
