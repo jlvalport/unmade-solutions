@@ -1,6 +1,11 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-import { faPlus, faChevronDown, faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faPlus,
+    faChevronDown,
+    faChevronRight,
+    faChevronLeft,
+    faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
+
 import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 library.add(
@@ -9,5 +14,6 @@ library.add(
     faChevronRight,
     faChevronLeft,
     faFacebookF,
-    faTwitter
+    faTwitter,
+    faEnvelopeOpen
 )

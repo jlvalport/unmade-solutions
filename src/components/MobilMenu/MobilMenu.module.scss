@@ -70,6 +70,11 @@
     a {
         display: inline-block;
         padding: 10px 15px;
+        color: #fff;
+
+        &:visited {
+            color: #fff;
+        }
     }
 }
 
@@ -80,8 +85,13 @@
     font-size: 1.6rem;
 
     a {
+        color: #fff;
         display: block;
         padding: 10px 0 10px 25px;
+
+        &:visited {
+            color: #fff;
+        }
     }
 }
 

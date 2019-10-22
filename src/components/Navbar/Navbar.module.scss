@@ -1,5 +1,6 @@
 @import '../../assets/styles/colors';
 @import '../../assets/styles/fonts';
+@import '../../assets//styles/media-queires';
 
 .header {
     position: fixed;
@@ -49,7 +50,11 @@
     }
 }
 
-@media screen and (min-width: 700px) {
+.navLinksDesktop {
+    display: none;
+}
+
+@media screen and (min-width: $desktopScreenSize) {
 
     .header {
         padding: 0 50px;

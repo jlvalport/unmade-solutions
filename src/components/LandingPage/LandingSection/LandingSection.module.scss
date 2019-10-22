@@ -1,6 +1,7 @@
 @import '../../../assets//styles/landing-spaces';
 @import '../../../assets/styles/colors';
 @import '../../../assets/styles/fonts';
+@import '../../../assets//styles/media-queires';
 
 .landingSection {
     position: relative;
@@ -11,13 +12,23 @@
     margin: 0 0 150px;
 }
 
+// Container with all text and link
+.landingBox {
+    position: relative;
+    top: 25%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .landingText {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 25%;
-    transform: translateY(-50%);
+    margin: 0 0 20px;
 
     p {
         margin: 0;
@@ -31,6 +42,13 @@
     }
 }
 
+
+// Text for desktop view
+.desktopText {
+    display: none;
+}
+
+// Text for mobile view
 .landTextSecondPart {
     display: flex;
     align-items: center;
@@ -46,6 +64,14 @@
     }
 }
 
+// Social icons for desktop view
+.socialIconsDesktopBox {
+    display: none;
+}
+
+/* Landing SVG */
+
+// Container of developer svg
 .devParent {
     position: absolute;
     width: 100%;
@@ -53,6 +79,7 @@
     bottom: 0;
 }
 
+// Curved image background
 .devBg {
     position: absolute;
     height: 100%;
@@ -62,10 +89,109 @@
     right: 0;
 }
 
+// Image of developer
 .dev {
     position: absolute;
     height: 275px;
     width: 275px;
     right: 10px;
     bottom: 30px;
+}
+
+/* Media query when phone is taller */
+
+@media screen and (max-width: $desktopScreenSize) and (min-height: 700px) {
+
+    .landingText {
+        margin: 0 0 40px;
+    }
+
+}
+
+/* Media query for desktop view */
+
+@media screen and (min-width: $desktopScreenSize) {
+    .landingSection {
+        display: flex;
+        height: 100vh;
+    }
+
+    // Container with all text and link
+    .landingBox {
+        top: unset;
+        width: 50%;
+        height: 100%;
+        align-items: unset;
+        transform: unset;
+    }
+
+    .landingText {
+        align-items: flex-start;
+        width: 100%;
+        margin: 0 0 0 50px;
+        transform: translateY(-50%);
+
+        p:nth-of-type(1) {
+            font-size: 3.5rem;
+        }
+    }
+
+    // Text for desktop view
+    .desktopText {
+        display: inline;
+    }
+
+    // Text for mobile view
+    .landTextSecondPart {
+        display: none;
+    }
+
+    // Social icons for desktop view
+    .socialIconsDesktopBox {
+        display: inline-block;
+        position: absolute;
+        bottom: 10%;
+        left: 50px;
+    }
+
+    .socialIconsDesktop {
+        font-size: 4rem;
+        margin: 0 25px 0 0;
+
+        &:nth-of-type(1) {
+            color: #4267b2;
+        }
+
+        &:nth-of-type(2) {
+            color: #1da1f2;
+        }
+    }
+
+    /* Landing SVG */
+
+    // Container of developer svg
+    .devParent {
+        width: 50%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+    }
+
+    // Curved image background
+    .devBg {
+        position: absolute;
+        height: 100%;
+        width: 90%;
+        max-width: 505px;
+        bottom: -200px;
+        right: 0;
+    }
+
+    // Image of developer
+    .dev {
+        height: 450px;
+        width: 450px;
+        right: 50px;
+        bottom: 30px;
+    }
 }
