@@ -5,7 +5,7 @@ import ContactForm from '../../UI/ContactForm/ContactForm';
 
 const ContactSection = () => {
     return (
-        <section className={classes.contactSection}>
+        <section className={classes.section}>
             <h2>¿Quieres una cotización?</h2>
             <p>Platiquemos, mándanos un mensaje</p>
             <ContactForm />

@@ -1,6 +1,9 @@
 @import '../../../assets/styles/colors';
 @import '../../../assets/styles/fonts';
+@import '../../../assets/styles/media-queires';
 
+
+// Form tag
 .contactForm {
     width: 100%;
     display: flex;
@@ -8,12 +11,14 @@
     align-items: center;
 }
 
+// Div surrounding each label
 .inputBox {
     display: block;
     width: 100%;
     margin: 0 0 20px;
 }
 
+// Label tag
 .label {
     display: block;
     width: 100%;
@@ -21,12 +26,14 @@
     margin: 0 0 5px;
     color: $normalText;
 
+    // When errors occur on labels
     &.labelError {
         color: $errorColor;
         font-weight: 700;
     }
 }
 
+// When errors occur on paragraphs
 p.error {
     display: block;
     width: 100%;
@@ -36,6 +43,7 @@ p.error {
     margin: 0 0 3px 0;
 }
 
+// Input elements
 .inputElement {
     display: block;
     width: 100%;
@@ -52,32 +60,36 @@ p.error {
 
 }
 
+// Text in input with white bgColor prop
 .white::placeholder {
     color: rgb(201, 199, 199);
 }
 
+// Colors of input when autofilled
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  border: none;
-  background: unset;
-  -webkit-text-fill-color: $addon;
-  -webkit-box-shadow: 0 0 0 100px #E3E3E3 inset !important;
-  box-shadow: 0 0 0 100px #E3E3E3 inset !important;
+    border: none;
+    background: unset;
+    -webkit-text-fill-color: $addon;
+    -webkit-box-shadow: 0 0 0 100px #E3E3E3 inset !important;
+    box-shadow: 0 0 0 100px #E3E3E3 inset !important;
 }
 
+// Colors of input with white bgColor prop when autofilled
 input.white:-webkit-autofill,
-input.white:-webkit-autofill:hover, 
+input.white:-webkit-autofill:hover,
 input.white:-webkit-autofill:focus,
 input.white:-webkit-autofill:active {
-  border: none;
-  background: unset;
-  -webkit-text-fill-color: $addon;
-  -webkit-box-shadow: 0 0 0 100px #fff inset !important;
-  box-shadow: 0 0 0 100px #fff inset !important;
+    border: none;
+    background: unset;
+    -webkit-text-fill-color: $addon;
+    -webkit-box-shadow: 0 0 0 100px #fff inset !important;
+    box-shadow: 0 0 0 100px #fff inset !important;
 }
 
+// Textarea element
 .textAreaElement {
     display: block;
     width: 100%;
@@ -89,37 +101,42 @@ input.white:-webkit-autofill:active {
     background: none;
     border: none;
 
+    // Textarea input text color
     &::placeholder {
         color: #fff;
     }
 
+    // Textarea input with white bgColor prop text color
     &.white::placeholder {
         color: rgb(201, 199, 199);
     }
 }
 
+// Colors of textarea when autofilled
 textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover, 
+textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus,
 textarea:-webkit-autofill:active {
-  border: none;
-  background: unset;
-  -webkit-text-fill-color: $addon;
-  -webkit-box-shadow: 0 0 0 1000px #E3E3E3 inset !important;
-  box-shadow: 0 0 0 1000px #E3E3E3 inset !important;
+    border: none;
+    background: unset;
+    -webkit-text-fill-color: $addon;
+    -webkit-box-shadow: 0 0 0 1000px #E3E3E3 inset !important;
+    box-shadow: 0 0 0 1000px #E3E3E3 inset !important;
 }
 
+// Colors of textarea with white bgColor prop when autofilled
 textarea.white:-webkit-autofill,
-textarea.white:-webkit-autofill:hover, 
+textarea.white:-webkit-autofill:hover,
 textarea.white:-webkit-autofill:focus,
 textarea.white:-webkit-autofill:active {
-  border: none;
-  background: unset;
-  -webkit-text-fill-color: $addon;
-  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
-  box-shadow: 0 0 0 1000px #fff inset !important;
+    border: none;
+    background: unset;
+    -webkit-text-fill-color: $addon;
+    -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+    box-shadow: 0 0 0 1000px #fff inset !important;
 }
 
+// Button to submit form
 .sendBtn {
     font-size: 1.7rem;
     color: #fff;
@@ -128,4 +145,62 @@ textarea.white:-webkit-autofill:active {
     background: $addon;
     border-radius: 30px;
     border: none;
+}
+
+@media screen and (min-width: $desktopScreenSize) {
+
+    // Form tag
+    .contactForm {
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+
+    // Makes input boxes to the left side of the form
+    .inputBox {
+        width: auto;
+
+        &:nth-of-type(1-4) {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+
+        &:nth-of-type(1) {
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        &:nth-of-type(2) {
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+        &:nth-of-type(3) {
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+
+        &:nth-of-type(4) {
+            grid-row-start: 4;
+            grid-row-end: 5;
+        }
+
+        &:nth-of-type(5) {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 5;
+        }
+    }
+
+    // Button to submit form
+    .sendBtn {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 5;
+        grid-row-end: 6;
+        justify-self: center;
+    }
 }

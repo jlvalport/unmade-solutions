@@ -1,6 +1,8 @@
 @import '../../../assets/styles/colors';
+@import '../../../assets/styles/media-queires';
 
-.contactSection {
+// Section tag 
+.section {
     background: $secondLvlBg;
     padding: 150px 30px 150px;
     display: flex;
@@ -19,5 +21,17 @@
         margin: 0 0 1em;
         text-align: left;
         color: $normalText;
+    }
+}
+
+@media screen and (min-width: $desktopScreenSize) {
+
+    // Section tag 
+    .section {
+
+        p {
+            width: 80%;
+            margin: 0 auto 1em;
+        }
     }
 }
