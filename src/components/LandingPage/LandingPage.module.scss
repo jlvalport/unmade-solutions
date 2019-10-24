@@ -1,0 +1,34 @@
+@import '../../assets/styles/media-queires';
+
+/* Quote Section texts */
+
+// Mobile view
+.mobileViewQuoteText {
+    display: inline;
+}
+
+// Desktop view
+.desktopViewQuoteText {
+    display: none;
+}
+
+@media screen and (min-width: $desktopScreenSize) {
+
+    /* Quote Section texts */
+
+    // Mobile view
+    .mobileViewQuoteText {
+        display: none;
+    }
+
+    // Desktop view
+    .desktopViewQuoteText {
+        display: inline;
+    }
+
+    .and {
+        display: inline;
+        font-size: 1.7rem;
+        height: auto;
+    }
+}

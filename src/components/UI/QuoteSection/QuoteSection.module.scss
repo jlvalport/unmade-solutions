@@ -1,5 +1,7 @@
 @import '../../../assets/styles/colors';
+@import '../../../assets/styles/media-queires';
 
+// Div container wrapping whole section
 .outerBox {
     width: 100%;
     height: auto;
@@ -11,12 +13,14 @@
     justify-content: center;
     align-items: center;
 
+    // Upper triangle
     .triangleVector:nth-of-type(1) {
         position: absolute;
         width: 100%;
         bottom: calc(100% - 3px);
     }
 
+    // Lower triangle
     .triangleVector:nth-of-type(2) {
         position: absolute;
         width: 100%;
@@ -25,19 +29,57 @@
     }
 }
 
+// Inner rectangle container
 .innerBox {
     width: 80%;
     margin: 50px 0;
     padding: 25px;
     border: 1px #fff solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     p {
+        display: inline-block;
         color: #fff;
+    }
+}
 
-        span {
-            display: inline;
-            font-size: 1.7rem;
-            height: auto;
+/* Tablet view media query */
+
+@media screen and (min-width: $tabletScreenSize) {
+
+    // Div container wrapping whole section
+    .outerBox {
+    
+        // Upper triangle
+        .triangleVector:nth-of-type(1) {
+            bottom: calc(100% - 5px);
+        }
+    
+        // Lower triangle
+        .triangleVector:nth-of-type(2) {
+            top: calc(100% - 5px);
+        }
+    }
+}
+
+/* Desktop view media query */
+
+@media screen and (min-width: $desktopScreenSize) {
+
+    // Div container wrapping whole section
+    .outerBox {
+
+        // Upper triangle
+        .triangleVector:nth-of-type(1) {
+            bottom: calc(100% - 8px);
+        }
+
+        // Lower triangle
+        .triangleVector:nth-of-type(2) {
+            top: calc(100% - 8px);
         }
     }
 }
