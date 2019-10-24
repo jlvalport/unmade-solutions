@@ -16,8 +16,8 @@ const Footer = () => {
                     <p><b>Unmade</b> Solutions</p>
                 </Link>
                 <div className={classes.footerContactBox}>
-                    <p className={classes.footerContact}>C 7681-3313</p>
-                    <p className={classes.footerContact}>hola@unmade.solutions</p>
+                    <p className={classes.footerContact}><FontAwesomeIcon icon={['fas', 'mobile']} className={classes.contactInfoIcon} /> C 7681-3313</p>
+                    <p className={classes.footerContact}><FontAwesomeIcon icon={['fas', 'envelope-open']} className={classes.contactInfoIcon} /> hola@unmade.solutions</p>
                 </div>
             </div>
             <div className={classes.footerBody}>
@@ -46,19 +46,21 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className={classes.linksOutterBox} style={{ margin: 0 }}>
-                    <div className={classes.linksInnerBox}>
+                    <div className={[classes.linksInnerBox, classes.policyLinksMobile].join(' ')}>
                         <p>Política de privacidad</p>
                         <p>Términos de uso</p>
                     </div>
                     <div className={[classes.linksInnerBox, classes.flexEnd, classes.spaceAround].join(' ')}>
-                        <FontAwesomeIcon icon={['fab', 'facebook-f']} className={classes.socialLinks} />
                         <FontAwesomeIcon icon={['fab', 'twitter']} className={classes.socialLinks} />
+                        <FontAwesomeIcon icon={['fab', 'facebook-f']} className={classes.socialLinks} />
                     </div>
                 </div>
                 <div className={classes.copyrightBox}>
                     <hr className={classes.hr} />
-                    <p>Unmade Solutions © {currentYear}</p>
-                    <p>Orgullosamente Salvadoreños</p>
+                    <p className={classes.policyLinksDesktop} >Política de privacidad</p>
+                    <p className={classes.policyLinksDesktop} >Términos de uso</p>
+                    <p className={classes.copyrightInfo} >Unmade Solutions © {currentYear}</p>
+                    <p className={classes.copyrightInfo} >Orgullosamente Salvadoreños</p>
                 </div>
             </div>
         </footer>

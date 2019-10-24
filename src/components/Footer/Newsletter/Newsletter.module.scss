@@ -1,17 +1,21 @@
 @import '../../../assets/styles/colors';
 @import '../../../assets/styles/fonts';
+@import '../../../assets/styles/media-queires';
 
+// Form tag container
 .newsletterForm {
     width: 100%;
     display: flex;
-
+    flex-direction: row;
 }
 
+// Input div container
 .inputBox {
     display: inline-block;
-    width: 75%;
+    width: calc(98% - 83px);
     margin: 0;
 
+    // When errors occur
     p.error {
         font-size: 1.1rem;
         font-weight: 700;
@@ -20,7 +24,10 @@
     }
 }
 
+// Input element
 .inputElement {
+    display: block;
+    width: calc(100% - 7px);
     font-size: 1.2rem;
     background: #2C2B2B;
     color: #fff;
@@ -33,18 +40,30 @@
         color: #fff;
     }
 
+    // When errors occur
     &.inputError {
         border: 2px solid $errorColor;
     }
 }
 
+// Submit button element
 .sendBtn {
     background: #5F5F5F;
     font-size: 1.2rem;
+    width: 83px;
     color: #fff;
     padding: 7px 15px;
     border: none;
     outline: none;
     border-radius: 10px;
     align-self: flex-start;
+}
+
+@media screen and (min-width: $desktopScreenSize) {
+
+    // Form tag container
+    .newsletterForm {
+        max-width: 400px;
+
+    }
 }

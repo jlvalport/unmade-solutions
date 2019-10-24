@@ -1,10 +1,13 @@
 @import '../../assets/styles/fonts';
+@import '../../assets/styles/media-queires';
 
+// Footer html tag
 .footer {
     background: #3E3E3E;
     color: #fff;
 }
 
+// Upper div with title and contact info
 .footerHead {
     padding: 17px 0;
     margin: 0 0 50px;
@@ -12,10 +15,16 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.16);
 }
 
+// Footer body with all other info
 .footerBody {
+    width: 100%;
     padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+// Link of logo
 .footerLogo {
     margin: 0.3em 0 0.3em;
     display: block;
@@ -33,53 +42,83 @@
     }
 }
 
+// Div container of contact info
 .footerContactBox {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
+// Contact info items
 .footerContact {
     display: inline-block;
     font-size: 1rem;
 }
 
-.newsletterBox {
-    margin: 0 0 50px;
+// Contact info items icons
+.contactInfoIcon {
+    display: none;
 }
 
+// Newsletter container
+.newsletterBox {
+    width: auto;
+    margin: 0 5px 50px;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        max-width: 400px;
+        margin: 1em 0;
+    }
+}
+
+// Div grouping container of links info containers
 .linksOutterBox {
     display: flex;
+    flex-direction: row;
     width: 100%;
     margin: 0 0 50px;
+    justify-content: space-around;
 }
 
+// Links info containers
 .linksInnerBox {
-    width: 50%;
+    width: auto;
+    // max-width: auto;
     margin: 0 10px;
+    display: flex;
+    flex-direction: column;
 
+    // Grouping container title
     .pageLinksTitle {
         font-size: 1.3rem;
         font-weight: 700;
+        display: inline-block;
     }
 
+    // Paragraph blank space to align 
     .titleSpace {
         height: 25px;
         visibility: hidden;
         margin: 1.3em 0;
     }
 
+    // To align-flex end an element 
     &.flexEnd {
         align-self: flex-end;
     }
 
+    // To justify-content space-around
     &.spaceAround {
         display: flex;
         justify-content: space-around;
     }
 
+    // Link
     a {
         display: inline-block;
+        width: auto;
         padding: 1em 10px 1em 0;
         color: #fff;
 
@@ -88,16 +127,29 @@
         }
 
         p {
+            display: inline-block;
             margin: 0;
         }
     }
 }
 
-.socialLinks {
-    font-size: 3.4rem;
+// Policy links mobile view
+.policyLinksMobile {}
+
+// Policy links desktop view
+.policyLinksDesktop {
+    display: none;
 }
 
+// Social media SVGs
+.socialLinks {
+    font-size: 3.4rem;
+    margin: 0 0 7px;
+}
+
+// Div container for copyright info
 .copyrightBox {
+    width: 100%;
 
     .hr {
         margin: 0 0 15px;
@@ -108,5 +160,153 @@
         text-align: center;
         margin: 0;
         padding: 0 0 0.8em 0;
+    }
+}
+
+@media screen and (min-width: $desktopScreenSize) {
+
+    // Upper div with title and contact info
+    .footerHead {
+        margin: 0 0 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    // Footer body with all other info
+    .footerBody {
+        padding: 0 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 2fr) 1fr;
+        grid-template-rows: 2fr 1fr;
+        grid-gap: 30px 40px;
+    }
+
+    // Link of logo
+    .footerLogo {
+        margin: 0.3em 0 0.3em;
+        display: inline-block;
+
+        p {
+            font-size: 1.8rem;
+            margin: 0.5em 0 0.5em 50px;
+        }
+    }
+
+    // Div container of contact info
+    .footerContactBox {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    // Contact info items
+    .footerContact {
+        font-size: 1.1rem;
+        margin: 0 50px 0 0;
+    }
+
+    // Contact info items icons
+    .contactInfoIcon {
+        display: inline-block;
+        font-size: 1.2rem;
+        margin: 0 3px 0 0;
+    }
+
+    // Newsletter container
+    .newsletterBox {
+        margin: 0;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    // Div grouping container of links info containers
+    .linksOutterBox {
+        margin: 0;
+
+        &:nth-of-type(2) {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        &:nth-of-type(1) {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+    }
+
+    // Policy links mobile view
+    .policyLinksMobile {
+        display: none;
+    }
+
+    // Policy links desktop view
+    .policyLinksDesktop {
+        display: inline-block;
+        justify-self: flex-start;
+        font-size: 0.8rem;
+
+        &:nth-of-type(1) {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+        &:nth-of-type(2) {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+    }
+
+    // Div container for copyright info
+    .copyrightBox {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 2px 40px;
+
+        .hr {
+            height: 1px;
+            margin: 0;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            align-self: center;
+        }
+    }
+
+    // Copyright info items
+    .copyrightInfo {
+        justify-self: flex-end;
+        font-size: 0.8rem;
+
+        &:nth-of-type(1) {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+        &:nth-of-type(2) {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
     }
 }

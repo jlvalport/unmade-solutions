@@ -4,7 +4,8 @@ import { faPlus,
     faChevronDown,
     faChevronRight,
     faChevronLeft,
-    faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
+    faEnvelopeOpen,
+    faMobile } from '@fortawesome/free-solid-svg-icons';
 
 import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
@@ -15,5 +16,6 @@ library.add(
     faChevronLeft,
     faFacebookF,
     faTwitter,
-    faEnvelopeOpen
+    faEnvelopeOpen,
+    faMobile
 )
