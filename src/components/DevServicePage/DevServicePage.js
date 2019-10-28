@@ -12,7 +12,7 @@ const DevServicePage = () => {
             <LandingDevSection />
             <SectionTitle>Desarrollo Web</SectionTitle>
             <DevServiceDescription />
-            <QuoteSection fontSize='2.2'>La calidad en un servicio o producto no es lo que pones en él. Es lo que el cliente obtiene de ello.</QuoteSection>
+            <QuoteSection fontSize='2.2' message='La calidad en un servicio o producto no es lo que pones en él. Es lo que el cliente obtiene de ello.' />
             <NextPageSection link='/servicio-de-marketing' >Marketing</NextPageSection>
         </main>
     );
