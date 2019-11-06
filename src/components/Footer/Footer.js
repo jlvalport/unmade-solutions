@@ -16,7 +16,7 @@ const Footer = () => {
                     <p><b>Unmade</b> Solutions</p>
                 </Link>
                 <div className={classes.footerContactBox}>
-                    <p className={classes.footerContact}><FontAwesomeIcon icon={['fas', 'mobile']} className={classes.contactInfoIcon} /> C 7681-3313</p>
+                    <p className={classes.footerContact}><FontAwesomeIcon icon={['fas', 'mobile']} className={classes.contactInfoIcon} /> C (+503) 7681-3313</p>
                     <p className={classes.footerContact}><FontAwesomeIcon icon={['fas', 'envelope-open']} className={classes.contactInfoIcon} /> hola@unmade.solutions</p>
                 </div>
             </div>

@@ -2,22 +2,42 @@
 @import '../../assets/styles/fonts';
 @import '../../assets//styles/media-queires';
 
-.header {
+/* Mobile view css */
+
+// Header tag static navbar
+.staticHeader {
+    position: absolute;
+}
+
+// Header tag dynamic navbar
+.dynamicHeader {
     position: fixed;
+    transition: all 0.6s ease-out;
+    transform: translateY(-200%);
+
+    &.navbarVisible {
+        transform: translateY(0);
+        transition: all 0.6s ease-out;
+    }
+}
+
+// Header tag to style the navbars
+.header {
     height: 100px;
     width: 100%;
+    top: 0;
     background: #fff;
     font-family: $titleFont;
     display: flex;
     flex-direction: row;
     align-items: center;
     z-index: 20;
-
 }
 
+// Link to logo
 .logo {
     margin: 0 0 0 40px;
-    
+
     p {
         display: inline-block;
         margin: 0;
@@ -28,6 +48,7 @@
     }
 }
 
+// Links to language and mobile menu
 .navLinks {
     list-style-type: none;
     display: flex;
@@ -50,20 +71,82 @@
     }
 }
 
+// Navbar links for desktop view
 .navLinksDesktop {
     display: none;
 }
 
+/* Desktop view media query */
+
 @media screen and (min-width: $desktopScreenSize) {
 
+    // Header tag static navbar
+    .staticHeader {
+
+        &.strongColorBged {
+            background: unset;
+
+            // Link to logo
+            .logo {
+
+                p {
+                    color: #fff;
+                }
+            }
+
+            // Navbar links for desktop view
+            .navLinksDesktop {
+                color: #fff;
+            }
+
+            // Unordered list inner box
+            .navLinksDesktopInner {
+
+                li {
+
+                    a {
+                        color: #fff;
+
+                        &:visited {
+                            color: #fff;
+                        }
+
+                    }
+                }
+
+            }
+        }
+
+        .socialIconsDesktopBox {
+            transition: all 0.6s ease-out;
+
+            &.hidden {
+                width: 0;
+                margin: 0;
+                visibility: hidden;
+                opacity: 0;
+                transition: width 0.8s ease-out, margin 0.8s ease-out, visibility 0.8s ease-out, opacity 0.4s ease-out;
+                
+            }
+        }
+    }
+
+    // Header tag to style the navbars
     .header {
         padding: 0 50px;
     }
 
+    // Links to language and mobile menu
     .navLinks {
         display: none;
     }
 
+    // Link to logo
+    .logo {
+        width: 23%;
+    }
+
+    // Navbar links for desktop view
     .navLinksDesktop {
         height: 100%;
         margin: 0;
@@ -76,6 +159,7 @@
         justify-content: space-between;
     }
 
+    // Unordered list inner box
     .navLinksDesktopInner {
         list-style: none;
         display: flex;
@@ -101,6 +185,7 @@
             }
         }
 
+        // Social icons desktop view
         .socialIconsDesktop {
             font-size: 1.4rem;
         }
