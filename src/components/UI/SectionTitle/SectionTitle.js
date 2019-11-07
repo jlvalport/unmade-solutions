@@ -10,35 +10,57 @@ class SectionTitle extends React.Component {
 
     measureElement = element => {
         const DOMNode = ReactDOM.findDOMNode(element);
+        const rectInfo = DOMNode.getBoundingClientRect();
+
         return {
-            width: DOMNode.offsetWidth,
-            height: DOMNode.offsetHeight,
+            width: rectInfo.width,
+            height: rectInfo.height
         };
     }
 
     componentDidMount(prevProps, prevState) {
-
-
         const title = document.querySelector('.' + classes.title);
         const titleBox = document.querySelector('.' + classes.titleBox);
-        let titleWidth, titleHeight;
-
+        const titleBg = document.querySelector('.' + classes.titleBg);
+        let titleWidth, titleHeight, newTitleBgWidth;
 
         setTimeout(() => {
             titleWidth = this.measureElement(title).width;
             titleHeight = this.measureElement(title).height;
-            const maxWidth = (window.innerWidth > 0) ? window.innerWidth : window.screen.width;
-            const titleBoxStyle = titleBox.currentStyle || window.getComputedStyle(titleBox);
-            const marginLeftOfTitle = parseInt(titleBoxStyle.marginLeft, 10);
-            const marginRightOfTitle = parseInt(titleBoxStyle.marginRight, 10);
 
-            if (titleWidth >= (maxWidth - marginLeftOfTitle - marginRightOfTitle)) {
-                titleWidth -= marginLeftOfTitle;
-                titleWidth -= marginRightOfTitle;
+            const win = window,
+                doc = document,
+                docElem = doc.documentElement,
+                body = doc.getElementsByTagName('body')[0],
+                maxWidth = win.innerWidth || docElem.clientWidth || body.clientWidth;
+
+            const titleBoxStyle = titleBox.currentStyle || window.getComputedStyle(titleBox);
+            const marginLeftOfTitleBox = parseInt(titleBoxStyle.marginLeft, 10);
+            const marginRightOfTitleBox = parseInt(titleBoxStyle.marginRight, 10);
+
+            // Title background data
+            const titleBgStyle = window.getComputedStyle(titleBg);
+            const titleBgTransformValue = titleBgStyle.getPropertyValue("-webkit-transform") ||
+                titleBgStyle.getPropertyValue("-moz-transform") ||
+                titleBgStyle.getPropertyValue("-ms-transform") ||
+                titleBgStyle.getPropertyValue("-o-transform") ||
+                titleBgStyle.getPropertyValue("transform") ||
+                "fail...";
+            let values = titleBgTransformValue.split('(')[1];
+            values = values.split(')')[0];
+            values = values.split(',');
+            const titleBgXTranslation = values[4];
+
+            // Calculations to set the width of title background
+            if (titleWidth >= (maxWidth - marginLeftOfTitleBox - marginRightOfTitleBox - titleBgXTranslation)) {
+                newTitleBgWidth = titleWidth - marginLeftOfTitleBox;
+                newTitleBgWidth -= marginRightOfTitleBox;
+            } else {
+                newTitleBgWidth = titleWidth;
             }
 
             const titleBgStyles = {
-                width: titleWidth + 'px',
+                width: newTitleBgWidth + 'px',
                 height: titleHeight + 'px'
             }
 
@@ -47,7 +69,7 @@ class SectionTitle extends React.Component {
                     titleBgStyles
                 })
             }
-        }, 300)
+        }, 400)
     }
 
 
@@ -64,9 +86,9 @@ class SectionTitle extends React.Component {
         }
 
         const SpecificComponent = this.props.tag ? component[this.props.tag] : 'h1';
-        
+
         const titleFontSize = this.props.fontSize ? this.props.fontSize : null;
-        const titleStyles = titleFontSize ? {fontSize: titleFontSize} : null;
+        const titleStyles = titleFontSize ? { fontSize: titleFontSize } : null;
 
         const titleBgColorClass = this.props.color ? BgColor[this.props.color] : null;
 
