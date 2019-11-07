@@ -73,8 +73,6 @@
     // Landing section tag of development service page
     .section {
         padding-top: unset;
-        margin: 0 0 80px;
-
         background: rgba(5, 74, 145, .65);
         background-image: url('../../../assets/img/clients.jpg');
         background-image:
@@ -83,6 +81,7 @@
         background-size: cover;
     }
 
+    // Div container of mobile view text
     .landingTextBoxMobile {
         display: none;
     }
