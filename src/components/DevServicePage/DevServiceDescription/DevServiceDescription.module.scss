@@ -1,9 +1,28 @@
 @import '../../../assets/styles/colors';
 @import '../../../assets/styles/fonts';
+@import '../../../assets/styles/media-queires';
 
+// Development service introduction H2 tag
 .serviceIntro {
-    font-size: $secondTitle;
+    font-size: $secondTitleFontSize;
     margin: 1em 11% 80px;
     font-weight: 400;
     color: $normalText;
+}
+
+@media screen and (min-width: $desktopScreenSize) {
+
+    // Development service introduction H2 tag
+    .serviceIntro {
+        font-size: $secondTitleDesktopFontSize;
+        margin: 1em auto 80px;
+        max-width: 800px;
+    }
+
+    // Div containing all info pieces
+    .infoBox {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
