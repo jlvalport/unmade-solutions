@@ -1,22 +1,100 @@
 @import '../../../assets/styles/colors';
 @import '../../../assets/styles/fonts';
+@import '../../../assets/styles/media-queires';
 
+// About us page information section tag
 .section {
     width: 100%;
 
     p {
         font-size: $paragraphLvlTextFontSize;
-        margin: 1em 25px;
     }
 }
 
-.introText {
+// Introductory text title
+.introTextTitle {
     font-size: 3.5rem;
     margin: 1.5em 25px;
 }
 
+// Introductory text
+.introText {
+    margin: 90px 25px;
+}
+
+// SectionTitle line break
+.sectionTitleLineBreak {
+    display: none;
+}
+
+// Img tag
 .photo {
     display: block;
     width: 100%;
     margin: 0;
+}
+
+.photoDescriptionText {
+    margin: 90px 25px;
+}
+
+@media screen and (min-width: $desktopScreenSize) {
+
+
+    // About us page information section tag
+    .section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // Introductory text
+    .introTextTitle {
+        display: inline-block;
+        text-align: center;
+        font-size: 2.8rem;
+        margin: 1.5em 100px;
+        align-self: center;
+    }
+
+    // Introductory text
+    .introText {
+        margin: 20px 0 90px;
+        display: inline-block;
+        max-width: 800px;
+        align-self: center;
+    }
+
+    // SectionTitle line break
+    .sectionTitleLineBreak {
+        display: inline;
+    }
+
+    .imgsBox {
+        position: relative;
+        width: 100%;
+        margin: 0 0 150px;
+    }
+
+    .photo {
+
+        &:nth-of-type(1) {
+            position: relative;
+            width: 60%;
+            margin: 0 0 0 50px;
+        }
+
+        &:nth-of-type(2) {
+            position: absolute;
+            width: 45%;
+            right: 50px;
+            bottom: -130px;
+        }
+    }
+
+    .photoDescriptionText {
+        display: inline-block;
+        width: 50%;
+        max-width: 450px;
+        margin: 20px 0 90px 100px;
+    }
 }
