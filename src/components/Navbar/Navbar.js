@@ -11,7 +11,7 @@ class Navbar extends React.Component {
     state = {
         prevScrollpos: window.pageYOffset,
         visible: false,
-        navbarAppearanceClass: undefined,
+        navbarAppearanceClass: null,
         showSocialIconsDesktop: false
     }
 
@@ -43,9 +43,9 @@ class Navbar extends React.Component {
                 }
                 break;
             default:
-                if (this.state.navbarAppearanceClass !== undefined) {
+                if (this.state.navbarAppearanceClass !== null) {
                     this.setState({
-                        navbarAppearanceClass: undefined
+                        navbarAppearanceClass: null
                     });
                 }
         }
