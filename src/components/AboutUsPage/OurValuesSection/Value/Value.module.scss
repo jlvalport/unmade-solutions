@@ -1,5 +1,7 @@
 @import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/media-queires';
 
+// Div parent container for value info
 .valueBox {
     display: block;
     margin: 0 20px 50px;
@@ -16,15 +18,48 @@
     }
 }
 
+// H3 tag value title
 .title {
     font-size: 2rem;
     color: $addon;
     margin: 15px 0;
 }
 
+// Value icon
 .icon {
     height: 60px;
     width: 60px;
     align-self: flex-end;
+    justify-self: flex-end;
     margin: 0 0 15px
+}
+
+@media screen and (min-width: $desktopScreenSize) {
+
+    // Div parent container for value info
+    .valueBox {
+        margin: 0 0 30px;
+        box-shadow: unset;
+        width: 22%;
+        min-width: 230px;
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        &:hover {
+            box-shadow: 5px 5px 24px rgba(0, 0, 0, 0.14);
+        }
+    }
+
+    // H3 tag value title
+    .title {
+        font-size: 1.7rem;
+    }
+
+    // Value icon
+    .icon {
+        height: 45px;
+        width: 45px;
+    }
 }
