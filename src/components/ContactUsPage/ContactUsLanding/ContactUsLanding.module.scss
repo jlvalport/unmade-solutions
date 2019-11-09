@@ -1,7 +1,9 @@
 @import '../../../assets//styles/landing-spaces';
 @import '../../../assets/styles/colors';
 @import '../../../assets/styles/fonts';
+@import '../../../assets/styles/media-queires';
 
+// Contact us page landing section tag
 .section {
     position: relative;
     height: 100vh;
@@ -9,38 +11,45 @@
     font-family: $titleFont;
     padding-top: $mobil-landing-space;
     margin: 0 0 80px;
-    
+
     p {
         color: $normalText;
     }
 }
 
+// Landing text div parent container
 .textBox {
     position: relative;
     top: 43%;
     transform: translateY(-50%);
+    margin: 0 25px;
 }
 
+// Hello paragraph
 .hello {
     font-size: 7rem;
-    margin: 0 25px;
+    margin: 0;
     font-weight: 700;
 }
 
+// Help you question paragraph
 .helpYou {
     font-size: 2.2rem;
-    margin: 0 25px 25px;
+    margin: 0 0 25px;
 }
 
+// Contact information paragraph
 .contact {
     font-size: 1.3rem;
-    margin: 0 25px;
+    margin: 0;
 }
 
+// Span tag to color orange text
 .orange {
     color: $addon;
 }
 
+// Span with "O"
 .o {
     font-size: 6rem;
     margin: 0;
@@ -48,4 +57,24 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 50%)
+}
+
+@media screen and (min-width: $desktopScreenSize) {
+
+    // Landing text div parent container
+    .textBox {
+        margin: 0 100px;
+    }
+
+    // Hello paragraph
+    .hello {
+        font-size: 9rem;
+        margin: 0;
+    }
+
+    // Help you question paragraph
+    .helpYou {
+        font-size: 2.8rem;
+        margin: 0 0 45px;
+    }
 }
