@@ -1,11 +1,20 @@
 import React from 'react';
 import ReactDOM from "react-dom";
+import PropTypes from 'prop-types';
 
 import classes from './SectionTitle.module.scss';
 
 class SectionTitle extends React.Component {
+    constructor(props) {
+        super(props);
+        this.titleBox = React.createRef();
+        this.title = React.createRef();
+        this.titleBg = React.createRef();
+    }
+
     state = {
-        titleBgStyles: {}
+        titleBgStyles: {},
+        titleFontSize: null
     }
 
     measureElement = element => {
@@ -18,28 +27,26 @@ class SectionTitle extends React.Component {
         };
     }
 
-    componentDidMount(prevProps, prevState) {
-        const title = document.querySelector('.' + classes.title);
-        const titleBox = document.querySelector('.' + classes.titleBox);
-        const titleBg = document.querySelector('.' + classes.titleBg);
+    componentDidMount() {
         let titleWidth, titleHeight, newTitleBgWidth;
 
+        const win = window,
+            doc = document,
+            docElem = doc.documentElement,
+            body = doc.getElementsByTagName('body')[0],
+            maxWidth = win.innerWidth || docElem.clientWidth || body.clientWidth;
+
         setTimeout(() => {
-            titleWidth = this.measureElement(title).width;
-            titleHeight = this.measureElement(title).height;
+            const titleDimensions = this.measureElement(this.title.current);
+            titleWidth = titleDimensions.width;
+            titleHeight = titleDimensions.height;
 
-            const win = window,
-                doc = document,
-                docElem = doc.documentElement,
-                body = doc.getElementsByTagName('body')[0],
-                maxWidth = win.innerWidth || docElem.clientWidth || body.clientWidth;
-
-            const titleBoxStyle = titleBox.currentStyle || window.getComputedStyle(titleBox);
+            const titleBoxStyle = this.titleBox.current.currentStyle || window.getComputedStyle(this.titleBox.current);
             const marginLeftOfTitleBox = parseInt(titleBoxStyle.marginLeft, 10);
             const marginRightOfTitleBox = parseInt(titleBoxStyle.marginRight, 10);
 
             // Title background data
-            const titleBgStyle = window.getComputedStyle(titleBg);
+            const titleBgStyle = window.getComputedStyle(this.titleBg.current);
             const titleBgTransformValue = titleBgStyle.getPropertyValue("-webkit-transform") ||
                 titleBgStyle.getPropertyValue("-moz-transform") ||
                 titleBgStyle.getPropertyValue("-ms-transform") ||
@@ -76,31 +83,40 @@ class SectionTitle extends React.Component {
 
 
     render() {
-        const component = {
-            h1: 'h1',
-            h2: 'h2'
-        }
-
-        const BgColor = {
-            orange: 'orangeColor'
-        }
-
-        const SpecificComponent = this.props.tag ? component[this.props.tag] : 'h1';
-
-        const titleFontSize = this.props.fontSize ? this.props.fontSize : null;
-        const titleStyles = titleFontSize ? { fontSize: titleFontSize } : null;
-
-        const titleBgColorClass = this.props.color ? BgColor[this.props.color] : null;
+        const SpecificComponent = this.props.tag;
 
         return (
-            <div className={classes.titleBox}>
-                <div className={[classes.titleBg, classes[titleBgColorClass]].join(' ')} style={this.state.titleBgStyles}></div>
+            <div className={classes.titleBox} ref={this.titleBox}>
+                <div
+                    className={[classes.titleBg, classes[this.props.bgColor]].join(' ')}
+                    style={this.state.titleBgStyles}
+                    ref={this.titleBg}
+                ></div>
 
-                <SpecificComponent className={classes.title} style={titleStyles}>{this.props.children}</SpecificComponent>
+                <SpecificComponent
+                    className={
+                        this.props.longTitle
+                        ? [classes.title, classes.longTitle].join(' ')
+                        : classes.title
+                    }
+                    ref={this.title}
+                >{this.props.children}</SpecificComponent>
 
             </div>
         );
     }
+}
+
+SectionTitle.propTypes = {
+    tag: PropTypes.oneOf(['h1', 'h2']),
+    bgColor: PropTypes.oneOf(['orange', null]),
+    longTitle: PropTypes.bool
+}
+
+SectionTitle.defaultProps = {
+    tag: 'h1',
+    bgColor: null,
+    longTitle: false
 }
 
 export default SectionTitle

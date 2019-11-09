@@ -13,7 +13,7 @@ import qualityIcon from '../../../assets/img/graphics/icons/quality.svg';
 const OurValuesSection = () => {
     return (
         <React.Fragment>
-            <SectionTitle tag='h2' color='orange'>Nuestros Valores</SectionTitle>
+            <SectionTitle tag='h2' bgColor='orange'>Nuestros Valores</SectionTitle>
             <Value title='Liderazgo' infoText='El coraje de moldear un futuro mejor.' icon={leadershipIcon} />
             <Value title='Colaboración' infoText='Aprovechar el genio colectivo.' icon={colaborationIcon} />
             <Value title='Integridad' infoText='Se real.' icon={integrityIcon} />

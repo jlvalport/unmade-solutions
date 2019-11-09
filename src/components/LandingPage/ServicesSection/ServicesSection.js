@@ -8,7 +8,7 @@ import MoreInfoBtn from '../../UI/MoreInfoBtn/MoreInfoBtn';
 const ServicesSection = () => {
     return (
         <section className={classes.servicesSection}>
-            <SectionTitle tag='h1'>Servicios</SectionTitle>
+            <SectionTitle>Servicios</SectionTitle>
             <div className={classes.allInfoBox}>
                 <InfoPiece tag='h2' title='Desarrollo de Páginas Web'>
                     <p>Tu sitio web es la primera impresión digital de tu empresa y hay que asegurarse que sea excelente. Debe reflejar todo lo que deseas que tus clientes potenciales conozcan y recuerden de tu negocio.</p>
