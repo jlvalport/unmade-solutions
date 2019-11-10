@@ -68,7 +68,7 @@ const ContactForm = withFormik({
     }),
     handleSubmit(values) {
         // This is the endpoint we created in our API Gateway. This is where we make our POST request, which calls our Lambda function.
-        const endpoint = 'https://r0vu7fp7zb.execute-api.us-west-2.amazonaws.com/stage-one';
+        const endpoint = 'https://9njydz2hi0.execute-api.us-west-1.amazonaws.com/stageOne/submit';
         
         // Here, we instantiate our Request. This is a special object used by the Fetch API so it knows where to send data, what data to send, and how to send it.
         var lambdaRequest = new Request(endpoint, {
