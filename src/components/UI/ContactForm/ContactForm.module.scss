@@ -47,7 +47,7 @@ p.error {
 .inputElement {
     display: block;
     width: 100%;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-family: $bodyFont;
     color: $addon;
     outline: none;
@@ -94,7 +94,7 @@ input.white:-webkit-autofill:active {
     display: block;
     width: 100%;
     height: 300px;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-family: $bodyFont;
     color: $addon;
     outline: none;
@@ -145,7 +145,28 @@ textarea.white:-webkit-autofill:active {
     background: $addon;
     border-radius: 30px;
     border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background: darken($addon, 5%);
+    }
+
+    &:disabled {
+        background: #ebebeb;
+        cursor: not-allowed;
+    }
 }
+
+.submitError {
+    font-size: 1.6rem;
+    color: $errorColor;
+    font-weight: bold;
+}
+
+/* Desktop view media query */
 
 @media screen and (min-width: $desktopScreenSize) {
 
